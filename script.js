@@ -1,79 +1,104 @@
 let text = document.getElementById("text");
 let message = document.getElementById("message");
 
+let clicked = false;
+
+
 function startFix(){
 
-    text.innerHTML = "🔍 Starting mood scan...";
+    if(clicked) return;
 
-    setTimeout(()=>{
+    clicked = true;
 
-        text.innerHTML =
-        "Checking attitude levels... 👀";
+
+    // Hearts start immediately
+    createHearts();
+
+
+    let lines = [
+
+        "🔍 Mood scan started...",
+
+        "Hmm... someone is acting mysterious today 👀",
+
+        "Checking if you are still pretending to be angry 😤",
+
+        "Breaking news: you are still cute when you are annoyed 😂",
+
+        "Searching for the missing smile...",
+
+        "Smile found successfully 😌❤️",
+
+        "Risako ho babe 🍒",
+
+        "I know you are busy ignoring me but..."
+
+        ,
+        "I miss annoying you a little bit 🤭",
+
+        "Don't act too serious, I know you are smiling right now 😏",
+
+        "Your angry mode looks suspiciously adorable 😂",
+
+        "Congratulations, you unlocked my attention ✨",
+
+        "Come back before I start talking to myself again 🤨"
+
+    ];
+
+
+    let index = 0;
+
+
+    let interval = setInterval(()=>{
+
+
+        text.innerHTML = lines[index];
+
+
+        index++;
+
+
+        if(index >= lines.length){
+
+            clearInterval(interval);
+
+
+            message.innerHTML =
+
+            `
+            🍒 Risako ho babe 🍒
+            <br><br>
+            Stop ignoring me for too long 😭
+            <br><br>
+            I miss our random talks and your annoying side 😂
+            <br><br>
+            Now give me that cute little smile ✨
+            `;
+
+
+        }
+
 
     },1500);
 
-
-    setTimeout(()=>{
-
-        text.innerHTML =
-        "Hmm... someone looks a little grumpy today 😤";
-
-    },3000);
-
-
-    setTimeout(()=>{
-
-        text.innerHTML =
-        "But wait... smile detected somewhere 🤨";
-
-    },4500);
-
-
-    setTimeout(()=>{
-
-        text.innerHTML =
-        "Searching for the reason behind the silence... 🍒";
-
-    },6000);
-
-
-    setTimeout(()=>{
-
-        text.innerHTML =
-        "Found it: someone misses talking to you ❤️";
-
-    },7500);
-
-
-    setTimeout(()=>{
-
-        message.innerHTML =
-        `
-        <br>
-        Stop ignoring me hunnie 🥲🍒
-        <br><br>
-        I know you are pretending to be mad 😌
-        <br><br>
-        Come back before I start being annoying again 😂
-        <br><br>
-        (Too late... I already started)
-        `;
-
-        createHearts();
-
-    },9000);
 
 }
 
 
 
+
 function createHearts(){
 
-    for(let i=0;i<50;i++){
+
+    for(let i=0;i<80;i++){
+
 
         let heart=document.createElement("div");
 
+
         heart.className="heart";
+
 
         heart.innerHTML="❤️";
 
@@ -83,11 +108,16 @@ function createHearts(){
 
 
         heart.style.fontSize =
-        Math.random()*30+15+"px";
+        Math.random()*25+15+"px";
 
 
+        // Faster hearts
         heart.style.animationDuration =
-        Math.random()*6+5+"s";
+        Math.random()*3+3+"s";
+
+
+        heart.style.animationDelay =
+        Math.random()*2+"s";
 
 
         document.body.appendChild(heart);
@@ -98,8 +128,10 @@ function createHearts(){
 
             heart.remove();
 
-        },10000);
+        },6000);
+
 
     }
+
 
 }
