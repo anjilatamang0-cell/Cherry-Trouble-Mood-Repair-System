@@ -113,19 +113,11 @@ button:hover {
 
 
 .heart {
-
     position:absolute;
-
     color:#8b0015;
-
-    text-shadow:
-    0 0 15px #ff1744;
-
-    animation:
-    rise linear forwards;
-
+    text-shadow:0 0 15px #ff1744;
+    animation:rise linear forwards;
     opacity:.8;
-
 }
 
 
