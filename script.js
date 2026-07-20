@@ -1,30 +1,67 @@
-function startFix(){
-
 let text = document.getElementById("text");
 let message = document.getElementById("message");
 
-text.innerHTML =
-"Scanning mood levels... 🍷";
+function startFix(){
+
+    text.innerHTML = "🔍 Starting mood scan...";
+
+    setTimeout(()=>{
+
+        text.innerHTML =
+        "Checking attitude levels... 👀";
+
+    },1500);
 
 
-setTimeout(()=>{
+    setTimeout(()=>{
 
-text.innerHTML =
-"Anger detected... but still cute 😌";
+        text.innerHTML =
+        "Hmm... someone looks a little grumpy today 😤";
 
-
-},2000);
-
-
-setTimeout(()=>{
-
-message.innerHTML =
-"Stop ignoring me hunnie 🥲🍒<br>I miss you";
-
-createHearts();
+    },3000);
 
 
-},4000);
+    setTimeout(()=>{
+
+        text.innerHTML =
+        "But wait... smile detected somewhere 🤨";
+
+    },4500);
+
+
+    setTimeout(()=>{
+
+        text.innerHTML =
+        "Searching for the reason behind the silence... 🍒";
+
+    },6000);
+
+
+    setTimeout(()=>{
+
+        text.innerHTML =
+        "Found it: someone misses talking to you ❤️";
+
+    },7500);
+
+
+    setTimeout(()=>{
+
+        message.innerHTML =
+        `
+        <br>
+        Stop ignoring me hunnie 🥲🍒
+        <br><br>
+        I know you are pretending to be mad 😌
+        <br><br>
+        Come back before I start being annoying again 😂
+        <br><br>
+        (Too late... I already started)
+        `;
+
+        createHearts();
+
+    },9000);
 
 }
 
@@ -32,38 +69,37 @@ createHearts();
 
 function createHearts(){
 
-for(let i=0;i<40;i++){
+    for(let i=0;i<50;i++){
 
-let heart=document.createElement("div");
+        let heart=document.createElement("div");
 
-heart.className="heart";
+        heart.className="heart";
 
-heart.innerHTML="❤️";
-
-
-heart.style.left=
-Math.random()*100+"vw";
+        heart.innerHTML="❤️";
 
 
-heart.style.fontSize=
-Math.random()*25+15+"px";
+        heart.style.left =
+        Math.random()*100+"vw";
 
 
-heart.style.animationDuration=
-Math.random()*5+5+"s";
+        heart.style.fontSize =
+        Math.random()*30+15+"px";
 
 
-document.body.appendChild(heart);
+        heart.style.animationDuration =
+        Math.random()*6+5+"s";
+
+
+        document.body.appendChild(heart);
 
 
 
-setTimeout(()=>{
+        setTimeout(()=>{
 
-heart.remove();
+            heart.remove();
 
-},9000);
+        },10000);
 
-
-}
+    }
 
 }
